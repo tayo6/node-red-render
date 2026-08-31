@@ -1,3 +1,5 @@
 FROM nodered/node-red:latest
 
-CMD ["npm", "start", "--", "--userDir", "/data", "--port", "10000", "--host", "0.0.0.0"]
+COPY settings.js /data/settings.js
+
+CMD ["npm", "start", "--", "--settings", "/data/settings.js"]
