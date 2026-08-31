@@ -1,3 +1,3 @@
 FROM nodered/node-red:latest
 
-CMD ["sh", "-c", "npm start -- --port ${PORT:-1880}"]
+CMD ["sh", "-c", "npm start -- --port ${PORT:-1880} --userDir /data"]
