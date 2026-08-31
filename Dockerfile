@@ -1,3 +1,5 @@
 FROM nodered/node-red:latest
 
-CMD ["sh", "-c", "npm start -- --port ${PORT:-1880} --userDir /data"]
+COPY settings.js /data/settings.js
+
+CMD ["npm", "start", "--", "--settings", "/data/settings.js"]
